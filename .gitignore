@@ -1,4 +1,3 @@
 /target/
 **/*.rs.bk
-.travis.yml
-/.openpi-generator/
+Cargo.lock

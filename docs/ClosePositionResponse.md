@@ -1,0 +1,18 @@
+# ClosePositionResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**last_transaction_id** | Option<**i32**> | The ID of the most recent Transaction created for the Account | [optional]
+**related_transaction_ids** | Option<**Vec<i32>**> | The IDs of all Transactions that were created while satisfying the request. | [optional]
+**long_order_create_transaction** | Option<[**models::MarketOrderTransaction**](MarketOrderTransaction.md)> |  | [optional]
+**long_order_fill_transaction** | Option<[**models::OrderFillTransaction**](OrderFillTransaction.md)> |  | [optional]
+**long_order_cancel_transaction** | Option<[**models::OrderCancelTransaction**](OrderCancelTransaction.md)> |  | [optional]
+**short_order_create_transaction** | Option<[**models::MarketOrderTransaction**](MarketOrderTransaction.md)> |  | [optional]
+**short_order_fill_transaction** | Option<[**models::OrderFillTransaction**](OrderFillTransaction.md)> |  | [optional]
+**short_order_cancel_transaction** | Option<[**models::OrderCancelTransaction**](OrderCancelTransaction.md)> |  | [optional]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
