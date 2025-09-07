@@ -628,7 +628,7 @@ dependencies = [
 
 [[package]]
 name = "oanda-v20-openapi"
-version = "3.0.25"
+version = "0.1.0"
 dependencies = [
  "reqwest",
  "serde",
