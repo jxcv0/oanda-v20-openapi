@@ -18,7 +18,7 @@ pub enum DateTimeFormat {
     #[serde(rename = "UNIX")]
     Unix,
     #[serde(rename = "RFC3339")]
-    RfC3339,
+    Rfc3339,
 
 }
 
@@ -26,7 +26,7 @@ impl std::fmt::Display for DateTimeFormat {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::Unix => write!(f, "UNIX"),
-            Self::RfC3339 => write!(f, "RFC3339"),
+            Self::Rfc3339 => write!(f, "RFC3339"),
         }
     }
 }

@@ -20,9 +20,9 @@ use super::{Error, configuration, ContentType};
 #[serde(untagged)]
 pub enum CloseTradeError {
     Status400(models::CloseTradeBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status404(models::CloseTradeNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,9 +30,9 @@ pub enum CloseTradeError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOpenTradesError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -40,9 +40,9 @@ pub enum GetOpenTradesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTradeError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -50,9 +50,9 @@ pub enum GetTradeError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTradesError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -61,9 +61,9 @@ pub enum GetTradesError {
 #[serde(untagged)]
 pub enum SetTradeExtensionsError {
     Status400(models::TradeExtensionsBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status404(models::TradeExtensionsNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -72,9 +72,9 @@ pub enum SetTradeExtensionsError {
 #[serde(untagged)]
 pub enum SetTradeOrdersError {
     Status400(models::DependentTradeOrdersBadRequestResponse),
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 

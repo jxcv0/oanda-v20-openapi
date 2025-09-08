@@ -20,9 +20,9 @@ use super::{Error, configuration, ContentType};
 #[serde(untagged)]
 pub enum AccountsAccountIdOrdersOrderSpecifierPutError {
     Status400(models::ReplaceOrderBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status404(models::ReplaceOrderNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,9 +30,9 @@ pub enum AccountsAccountIdOrdersOrderSpecifierPutError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CancelOrderError {
-    Status401(),
+    Status401(models::Error401),
     Status404(models::CancelOrder404Response),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -41,10 +41,10 @@ pub enum CancelOrderError {
 #[serde(untagged)]
 pub enum CreateOrderError {
     Status400(models::CreateOrderBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status403(models::Error403),
     Status404(models::CreateOrderNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -52,9 +52,9 @@ pub enum CreateOrderError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrderError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -62,9 +62,9 @@ pub enum GetOrderError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOrdersError {
-    Status400(),
+    Status400(models::Error400),
     Status404(models::Error404),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -72,9 +72,9 @@ pub enum GetOrdersError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetPendingOrdersError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -83,9 +83,9 @@ pub enum GetPendingOrdersError {
 #[serde(untagged)]
 pub enum SetOrderExtensionsError {
     Status400(models::OrderExtensionsBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status404(models::OrderExtensionsNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 

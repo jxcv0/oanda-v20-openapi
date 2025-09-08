@@ -57,8 +57,8 @@ pub struct AccountSummary {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
     /// Client-assigned alias for the Account. Only provided if the Account has an alias set
-    #[serde(rename = "alias", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub alias: Option<Option<String>>,
+    #[serde(rename = "alias", skip_serializing_if = "Option::is_none")]
+    pub alias: Option<String>,
     #[serde(rename = "currency", skip_serializing_if = "Option::is_none")]
     pub currency: Option<models::AccountCurrency>,
     /// The current balance of the Account.

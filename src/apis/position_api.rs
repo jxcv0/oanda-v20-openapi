@@ -20,9 +20,9 @@ use super::{Error, configuration, ContentType};
 #[serde(untagged)]
 pub enum ClosePositionError {
     Status400(models::ClosePositionBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status404(models::ClosePositionNotFoundResponse),
-    Status405(),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -30,9 +30,9 @@ pub enum ClosePositionError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetInstrumentPositionError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -40,9 +40,9 @@ pub enum GetInstrumentPositionError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetOpenPositionsError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -50,9 +50,9 @@ pub enum GetOpenPositionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetPositionsError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
