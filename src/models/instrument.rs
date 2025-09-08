@@ -32,22 +32,22 @@ pub struct Instrument {
     pub trade_units_precision: Option<i32>,
     /// The smallest number of units allowed to be traded for this instrument.
     #[serde(rename = "minimumTradeSize", skip_serializing_if = "Option::is_none")]
-    pub minimum_trade_size: Option<f64>,
+    pub minimum_trade_size: Option<String>,
     /// The maximum trailing stop distance allowed for a trailing stop loss created for this instrument. Specified in price units.
     #[serde(rename = "maximumTrailingStopDistance", skip_serializing_if = "Option::is_none")]
-    pub maximum_trailing_stop_distance: Option<f64>,
+    pub maximum_trailing_stop_distance: Option<String>,
     /// The minimum trailing stop distance allowed for a trailing stop loss created for this instrument. Specified in price units.
     #[serde(rename = "minimumTrailingStopDistance", skip_serializing_if = "Option::is_none")]
-    pub minimum_trailing_stop_distance: Option<f64>,
+    pub minimum_trailing_stop_distance: Option<String>,
     /// The maximum position size allowed for this instrument. Specified in units.
     #[serde(rename = "maximumPositionSize", skip_serializing_if = "Option::is_none")]
-    pub maximum_position_size: Option<f64>,
+    pub maximum_position_size: Option<String>,
     /// The maximum units allowed for an Order placed for this instrument. Specified in units.
     #[serde(rename = "maximumOrderUnits", skip_serializing_if = "Option::is_none")]
-    pub maximum_order_units: Option<f64>,
+    pub maximum_order_units: Option<String>,
     /// The margin rate for this instrument.
     #[serde(rename = "marginRate", skip_serializing_if = "Option::is_none")]
-    pub margin_rate: Option<f64>,
+    pub margin_rate: Option<String>,
     #[serde(rename = "commission", skip_serializing_if = "Option::is_none")]
     pub commission: Option<Box<models::InstrumentComission>>,
 }

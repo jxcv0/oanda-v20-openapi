@@ -1600,68 +1600,55 @@ components:
           description:
             The total unrealized profit/loss for all Trades currently open
             in the Account.
-          type: number
-          format: double
+          type: string
         NAV:
           description:
             The net asset value of the Account. Equal to Account balance
             unrealizedPL.
-          type: number
-          format: double
+          type: string
         marginUsed:
           description: Margin currently used for the Account.
-          type: number
-          format: double
+          type: string
         marginAvailable:
           description: Margin available for Account currency.
-          type: number
-          format: double
+          type: string
         positionValue:
           description:
             The value of the Account's open positions represented in the
             Account's home currency.
-          type: number
-          format: double
+          type: string
         marginCloseoutUnrealizedPL:
           description: The Account's margin closeout unrealized PL.
-          type: number
-          format: double
+          type: string
         marginCloseoutNAV:
           description: The Account's margin closeout NAV.
-          type: number
-          format: double
+          type: string
         marginCloseoutMarginUsed:
           description: The Account's margin closeout margin used.
-          type: number
-          format: double
+          type: string
         marginCloseoutPercent:
           description:
             The Account's margin closeout percentage. When this value is
             1.0 or above the Account is in a margin closeout situation.
-          type: number
-          format: double
+          type: string
         marginCloseoutPositionValue:
           description:
             The value of the Account's open positions as used for margin
             closeout calculations represented in the Account's home currency.
-          type: number
-          format: double
+          type: string
         withdrawalLimit:
           description:
             The current WithdrawalLimit for the account which will be zero
             or a positive value indicating how much can be withdrawn from the account.
-          type: number
-          format: double
+          type: string
         marginCallMarginUsed:
           description: The Account's margin call margin used.
-          type: number
-          format: double
+          type: string
         marginCallPercent:
           description:
             The Account's margin call percentage. When this value is 1.0
             or above the Account is in a margin call situation.
-          type: number
-          format: double
+          type: string
     AccountSummary:
       description:
         A summary representation of a client's Account. The AccountSummary
@@ -1683,8 +1670,7 @@ components:
               $ref: "#/components/schemas/AccountCurrency"
             balance:
               description: The current balance of the Account.
-              type: number
-              format: double
+              type: string
             createdByUserID:
               description: ID of the user that created the Account.
               type: integer
@@ -1694,42 +1680,36 @@ components:
               $ref: "#/components/schemas/AccountGuaranteedStopLossOrderMode"
             pl:
               description: The total profit/loss realized over the lifetime of the Account.
-              type: number
-              format: double
+              type: string
             resettablePL:
               description:
                 The total realized profit/loss for the Account since it was
                 last reset by the client.
-              type: number
-              format: double
+              type: string
             resettablePLTime:
               $ref: "#/components/schemas/DateTime"
             financing:
               description:
                 The total amount of financing paid/collected over the lifetime
                 of the Account.
-              type: number
-              format: double
+              type: string
             commission:
               description:
                 The total amount of commission paid over the lifetime of
                 the Account.
-              type: number
-              format: double
+              type: string
             guaranteedExecutionFees:
               description:
                 The total amount of fees charged over the lifetime of the
                 Account for the execution of guaranteed Stop Loss Orders.
-              type: number
-              format: double
+              type: string
             marginRate:
               description:
                 Client-provided margin rate override for the Account. The
                 effective margin rate of the Account is the lesser of this value and
                 the OANDA margin rate for the Account's division. This value is only
                 provided if a margin rate override exists for the Account.
-              type: number
-              format: double
+              type: string
             marginCallEnterTime:
               $ref: "#/components/schemas/DateTime"
             marginCallExtensionCount:
@@ -1755,7 +1735,7 @@ components:
               $ref: "#/components/schemas/DateTime"
             lastTransactionId:
               description: The ID of the last Transaction created for the Account.
-              type: integer
+              type: string
         - $ref: "#/components/schemas/AccountState"
     AccountConfigurationRequest:
       type: object
@@ -1812,7 +1792,7 @@ components:
             $ref: "#/components/schemas/Instrument"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account.
-          type: integer
+          type: string
     AccountResponse:
       description: The response body of the account details request
       type: object
@@ -1821,7 +1801,7 @@ components:
           $ref: "#/components/schemas/Account"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account.
-          type: integer
+          type: string
     AccountsResponse:
       type: object
       properties:
@@ -1839,7 +1819,7 @@ components:
           $ref: "#/components/schemas/AccountSummary"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account.
-          type: integer
+          type: string
     Candlestick:
       type: object
       description: The Candlestick representation
@@ -1974,36 +1954,30 @@ components:
           description:
             The smallest number of units allowed to be traded for this
             instrument.
-          type: number
-          format: double
+          type: string
         maximumTrailingStopDistance:
           description:
             The maximum trailing stop distance allowed for a trailing stop
             loss created for this instrument. Specified in price units.
-          type: number
-          format: double
+          type: string
         minimumTrailingStopDistance:
           description:
             The minimum trailing stop distance allowed for a trailing stop
             loss created for this instrument. Specified in price units.
-          type: number
-          format: double
+          type: string
         maximumPositionSize:
           description:
             The maximum position size allowed for this instrument. Specified
             in units.
-          type: number
-          format: double
+          type: string
         maximumOrderUnits:
           description:
             The maximum units allowed for an Order placed for this instrument.
             Specified in units.
-          type: number
-          format: double
+          type: string
         marginRate:
           description: The margin rate for this instrument.
-          type: number
-          format: double
+          type: string
         commission:
           $ref: "#/components/schemas/InstrumentComission"
     InstrumentComission:
@@ -2014,20 +1988,17 @@ components:
           description:
             The commission amount (in the Account's home currency) charged
             per unitsTraded of the instrument
-          type: number
-          format: double
+          type: string
         unitsTraded:
           description:
             The number of units traded that the commission amount is based
             on.
-          type: number
-          format: double
+          type: string
         minimumCommission:
           description:
             The minimum commission amount (in the Account's home currency)
             that is charged when an Order is filled for this instrument.
-          type: number
-          format: double
+          type: string
     InstrumentName:
       description: Instrument name identifier. Used by clients to refer to an Instrument.
       type: string
@@ -2101,6 +2072,7 @@ components:
         - USD_THB
         - USD_TRY
         - USD_ZAR
+        - XAG_GBP
         - ZAR_JPY
       x-enum-varnames:
         - AudCad
@@ -2172,6 +2144,7 @@ components:
         - UsdThb
         - UsdTry
         - UsdZar
+        - XagGbp
         - ZarJpy
     InstrumentType:
       description: The type of the Instrument
@@ -2680,7 +2653,7 @@ components:
           $ref: "#/components/schemas/Order"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     OrdersResponse:
       type: object
       properties:
@@ -2691,7 +2664,7 @@ components:
             $ref: "#/components/schemas/Order"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     PendingOrdersResponse:
       type: object
       properties:
@@ -2702,7 +2675,7 @@ components:
             $ref: "#/components/schemas/Order"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     ReplaceOrderBadRequestResponse:
       allOf:
         - type: object
@@ -2966,7 +2939,7 @@ components:
           $ref: "#/components/schemas/Position"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     OpenPositionsResponse:
       type: object
       properties:
@@ -2977,7 +2950,7 @@ components:
             $ref: "#/components/schemas/Position"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     PositionsResponse:
       type: object
       properties:
@@ -2988,7 +2961,7 @@ components:
             $ref: "#/components/schemas/Position"
         lastTransactionID:
           description: he ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     ClientPrice:
       description: The specification of an Account-specific Price.
       type: object
@@ -3536,7 +3509,7 @@ components:
             $ref: "#/components/schemas/Trade"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     TradeExtensionsBadRequestResponse:
       allOf:
         - type: object
@@ -3565,7 +3538,7 @@ components:
           $ref: "#/components/schemas/Trade"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     TradesResponse:
       type: object
       properties:
@@ -3576,7 +3549,7 @@ components:
             $ref: "#/components/schemas/Trade"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     ClientConfigure:
       description:
         A ClientConfigure represents the configuration of an Account by
@@ -4604,7 +4577,7 @@ components:
       properties:
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
         relatedTransactionIDs:
           description:
             The IDs of all Transactions that were created while satisfying
@@ -4655,7 +4628,7 @@ components:
             - Heartbeat
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
         time:
           $ref: "#/components/schemas/DateTime"
     TransactionRejectReason:
@@ -4777,7 +4750,7 @@ components:
             $ref: "#/components/schemas/Transaction"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     TransactionResponse:
       type: object
       properties:
@@ -4785,7 +4758,7 @@ components:
           $ref: "#/components/schemas/Transaction"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     TransactionSinceIdResponse:
       type: object
       properties:
@@ -4796,7 +4769,7 @@ components:
             $ref: "#/components/schemas/Transaction"
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     TransactionsResponse:
       type: object
       properties:
@@ -4826,7 +4799,7 @@ components:
             type: string
         lastTransactionID:
           description: The ID of the most recent Transaction created for the Account
-          type: integer
+          type: string
     ClientExtensions:
       description:
         A ClientExtensions object allows a client to attach a clientID,

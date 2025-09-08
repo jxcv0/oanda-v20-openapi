@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**last_transaction_id** | Option<**i32**> | The ID of the most recent Transaction created for the Account | [optional]
+**last_transaction_id** | Option<**String**> | The ID of the most recent Transaction created for the Account | [optional]
 **related_transaction_ids** | Option<**Vec<i32>**> | The IDs of all Transactions that were created while satisfying the request. | [optional]
 **order_create_transaction** | Option<[**models::MarketOrderTransaction**](MarketOrderTransaction.md)> |  | [optional]
 **order_fill_transaction** | Option<[**models::OrderFillTransaction**](OrderFillTransaction.md)> |  | [optional]

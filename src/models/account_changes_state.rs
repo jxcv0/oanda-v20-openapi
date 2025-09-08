@@ -16,43 +16,43 @@ use serde::{Deserialize, Serialize};
 pub struct AccountChangesState {
     /// The total unrealized profit/loss for all Trades currently open in the Account.
     #[serde(rename = "unrealizedPL", skip_serializing_if = "Option::is_none")]
-    pub unrealized_pl: Option<f64>,
+    pub unrealized_pl: Option<String>,
     /// The net asset value of the Account. Equal to Account balance unrealizedPL.
     #[serde(rename = "NAV", skip_serializing_if = "Option::is_none")]
-    pub nav: Option<f64>,
+    pub nav: Option<String>,
     /// Margin currently used for the Account.
     #[serde(rename = "marginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_used: Option<f64>,
+    pub margin_used: Option<String>,
     /// Margin available for Account currency.
     #[serde(rename = "marginAvailable", skip_serializing_if = "Option::is_none")]
-    pub margin_available: Option<f64>,
+    pub margin_available: Option<String>,
     /// The value of the Account's open positions represented in the Account's home currency.
     #[serde(rename = "positionValue", skip_serializing_if = "Option::is_none")]
-    pub position_value: Option<f64>,
+    pub position_value: Option<String>,
     /// The Account's margin closeout unrealized PL.
     #[serde(rename = "marginCloseoutUnrealizedPL", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_unrealized_pl: Option<f64>,
+    pub margin_closeout_unrealized_pl: Option<String>,
     /// The Account's margin closeout NAV.
     #[serde(rename = "marginCloseoutNAV", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_nav: Option<f64>,
+    pub margin_closeout_nav: Option<String>,
     /// The Account's margin closeout margin used.
     #[serde(rename = "marginCloseoutMarginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_margin_used: Option<f64>,
+    pub margin_closeout_margin_used: Option<String>,
     /// The Account's margin closeout percentage. When this value is 1.0 or above the Account is in a margin closeout situation.
     #[serde(rename = "marginCloseoutPercent", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_percent: Option<f64>,
+    pub margin_closeout_percent: Option<String>,
     /// The value of the Account's open positions as used for margin closeout calculations represented in the Account's home currency.
     #[serde(rename = "marginCloseoutPositionValue", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_position_value: Option<f64>,
+    pub margin_closeout_position_value: Option<String>,
     /// The current WithdrawalLimit for the account which will be zero or a positive value indicating how much can be withdrawn from the account.
     #[serde(rename = "withdrawalLimit", skip_serializing_if = "Option::is_none")]
-    pub withdrawal_limit: Option<f64>,
+    pub withdrawal_limit: Option<String>,
     /// The Account's margin call margin used.
     #[serde(rename = "marginCallMarginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_call_margin_used: Option<f64>,
+    pub margin_call_margin_used: Option<String>,
     /// The Account's margin call percentage. When this value is 1.0 or above the Account is in a margin call situation.
     #[serde(rename = "marginCallPercent", skip_serializing_if = "Option::is_none")]
-    pub margin_call_percent: Option<f64>,
+    pub margin_call_percent: Option<String>,
     /// The price-dependent state of each pending Order in the Account.
     #[serde(rename = "orders", skip_serializing_if = "Option::is_none")]
     pub orders: Option<Vec<models::DynamicOrderState>>,

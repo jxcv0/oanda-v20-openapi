@@ -18,7 +18,7 @@ pub struct TradesResponse {
     pub trades: Option<Vec<models::Trade>>,
     /// The ID of the most recent Transaction created for the Account
     #[serde(rename = "lastTransactionID", skip_serializing_if = "Option::is_none")]
-    pub last_transaction_id: Option<i32>,
+    pub last_transaction_id: Option<String>,
 }
 
 impl TradesResponse {
