@@ -20,10 +20,10 @@ use super::{Error, configuration, ContentType};
 #[serde(untagged)]
 pub enum ConfigureAccountError {
     Status400(models::AccountConfigurationBadRequestResponse),
-    Status401(),
+    Status401(models::Error401),
     Status403(models::AccountConfigurationForbiddenResponse),
-    Status404(),
-    Status405(),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -32,8 +32,8 @@ pub enum ConfigureAccountError {
 #[serde(untagged)]
 pub enum GetAccountError {
     Status400(models::Error400),
-    Status401(),
-    Status405(),
+    Status401(models::Error401),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -41,9 +41,9 @@ pub enum GetAccountError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAccountChangesError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     Status416(models::Error416),
     UnknownValue(serde_json::Value),
 }
@@ -52,9 +52,9 @@ pub enum GetAccountChangesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAccountInstrumentsError {
-    Status400(),
-    Status401(),
-    Status405(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -62,9 +62,9 @@ pub enum GetAccountInstrumentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAccountSummaryError {
-    Status400(),
-    Status401(),
-    Status405(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 

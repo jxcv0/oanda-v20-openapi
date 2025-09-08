@@ -17,8 +17,8 @@ pub struct TradeExtensionsResponse {
     #[serde(rename = "lastTransactionID", skip_serializing_if = "Option::is_none")]
     pub last_transaction_id: Option<String>,
     /// The IDs of all Transactions that were created while satisfying the request.
-    #[serde(rename = "relatedTransactionIDs", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub related_transaction_ids: Option<Option<Vec<i32>>>,
+    #[serde(rename = "relatedTransactionIDs", skip_serializing_if = "Option::is_none")]
+    pub related_transaction_ids: Option<Vec<i32>>,
     #[serde(rename = "tradeClientExtensionsModifyTransaction", skip_serializing_if = "Option::is_none")]
     pub trade_client_extensions_modify_transaction: Option<Box<models::TradeClientExtensionsModifyTransaction>>,
 }

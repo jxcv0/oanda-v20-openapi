@@ -19,10 +19,10 @@ use super::{Error, configuration, ContentType};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetPricingError {
-    Status400(),
-    Status401(),
-    Status404(),
-    Status405(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 

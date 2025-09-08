@@ -19,9 +19,9 @@ use super::{Error, configuration, ContentType};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTransactionError {
-    Status401(),
-    Status404(),
-    Status405(),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
     UnknownValue(serde_json::Value),
 }
 
@@ -29,11 +29,11 @@ pub enum GetTransactionError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTransactionIdRangeError {
-    Status400(),
-    Status401(),
-    Status404(),
-    Status405(),
-    Status416(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
+    Status416(models::Error416),
     UnknownValue(serde_json::Value),
 }
 
@@ -41,12 +41,12 @@ pub enum GetTransactionIdRangeError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTransactionsError {
-    Status400(),
-    Status401(),
-    Status403(),
-    Status404(),
-    Status405(),
-    Status416(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status403(models::Error403),
+    Status404(models::Error404),
+    Status405(models::Error405),
+    Status416(models::Error416),
     UnknownValue(serde_json::Value),
 }
 
@@ -54,11 +54,11 @@ pub enum GetTransactionsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetTransactionsSinceError {
-    Status400(),
-    Status401(),
-    Status404(),
-    Status405(),
-    Status416(),
+    Status400(models::Error400),
+    Status401(models::Error401),
+    Status404(models::Error404),
+    Status405(models::Error405),
+    Status416(models::Error416),
     UnknownValue(serde_json::Value),
 }
 

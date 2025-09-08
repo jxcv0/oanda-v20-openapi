@@ -23,8 +23,8 @@ pub struct CreateOrderResponse {
     #[serde(rename = "lastTransactionID", skip_serializing_if = "Option::is_none")]
     pub last_transaction_id: Option<String>,
     /// The IDs of all Transactions that were created while satisfying the request.
-    #[serde(rename = "relatedTransactionIDs", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub related_transaction_ids: Option<Option<Vec<i32>>>,
+    #[serde(rename = "relatedTransactionIDs", skip_serializing_if = "Option::is_none")]
+    pub related_transaction_ids: Option<Vec<i32>>,
     #[serde(rename = "orderCreateTransaction", skip_serializing_if = "Option::is_none")]
     pub order_create_transaction: Option<Box<models::Transaction>>,
     #[serde(rename = "orderFillTransaction", skip_serializing_if = "Option::is_none")]

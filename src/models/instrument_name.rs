@@ -15,6 +15,8 @@ use serde::{Deserialize, Serialize};
 /// Instrument name identifier. Used by clients to refer to an Instrument.
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum InstrumentName {
+    #[serde(rename = "AU200_AUD")]
+    Au200Aud,
     #[serde(rename = "AUD_CAD")]
     AudCad,
     #[serde(rename = "AUD_CHF")]
@@ -29,6 +31,8 @@ pub enum InstrumentName {
     AudSgd,
     #[serde(rename = "AUD_USD")]
     AudUsd,
+    #[serde(rename = "BCO_USD")]
+    BcoUsd,
     #[serde(rename = "CAD_CHF")]
     CadChf,
     #[serde(rename = "CAD_HKD")]
@@ -37,12 +41,28 @@ pub enum InstrumentName {
     CadJpy,
     #[serde(rename = "CAD_SGD")]
     CadSgd,
+    #[serde(rename = "CH20_CHF")]
+    Ch20Chf,
     #[serde(rename = "CHF_HKD")]
     ChfHkd,
     #[serde(rename = "CHF_JPY")]
     ChfJpy,
     #[serde(rename = "CHF_ZAR")]
     ChfZar,
+    #[serde(rename = "CHINAH_HKD")]
+    ChinahHkd,
+    #[serde(rename = "CN50_USD")]
+    Cn50Usd,
+    #[serde(rename = "CORN_USD")]
+    CornUsd,
+    #[serde(rename = "DE10YB_EUR")]
+    De10YbEur,
+    #[serde(rename = "DE30_EUR")]
+    De30Eur,
+    #[serde(rename = "ESPIX_EUR")]
+    EspixEur,
+    #[serde(rename = "EU50_EUR")]
+    Eu50Eur,
     #[serde(rename = "EUR_AUD")]
     EurAud,
     #[serde(rename = "EUR_CAD")]
@@ -77,6 +97,8 @@ pub enum InstrumentName {
     EurUsd,
     #[serde(rename = "EUR_ZAR")]
     EurZar,
+    #[serde(rename = "FR40_EUR")]
+    Fr40Eur,
     #[serde(rename = "GBP_AUD")]
     GbpAud,
     #[serde(rename = "GBP_CAD")]
@@ -97,8 +119,20 @@ pub enum InstrumentName {
     GbpUsd,
     #[serde(rename = "GBP_ZAR")]
     GbpZar,
+    #[serde(rename = "HK33_HKD")]
+    Hk33Hkd,
     #[serde(rename = "HKD_JPY")]
     HkdJpy,
+    #[serde(rename = "JP225_USD")]
+    Jp225Usd,
+    #[serde(rename = "JP225Y_JPY")]
+    Jp225YJpy,
+    #[serde(rename = "NAS100_USD")]
+    Nas100Usd,
+    #[serde(rename = "NATGAS_USD")]
+    NatgasUsd,
+    #[serde(rename = "NL25_EUR")]
+    Nl25Eur,
     #[serde(rename = "NZD_CAD")]
     NzdCad,
     #[serde(rename = "NZD_CHF")]
@@ -111,14 +145,36 @@ pub enum InstrumentName {
     NzdSgd,
     #[serde(rename = "NZD_USD")]
     NzdUsd,
+    #[serde(rename = "SG30_SGD")]
+    Sg30Sgd,
     #[serde(rename = "SGD_CHF")]
     SgdChf,
-    #[serde(rename = "SGD_HKD")]
-    SgdHkd,
     #[serde(rename = "SGD_JPY")]
     SgdJpy,
+    #[serde(rename = "SOYBN_USD")]
+    SoybnUsd,
+    #[serde(rename = "SPX500_USD")]
+    Spx500Usd,
+    #[serde(rename = "SUGAR_USD")]
+    SugarUsd,
     #[serde(rename = "TRY_JPY")]
     TryJpy,
+    #[serde(rename = "UK100_GBP")]
+    Uk100Gbp,
+    #[serde(rename = "UK10YB_GBP")]
+    Uk10YbGbp,
+    #[serde(rename = "US2000_USD")]
+    Us2000Usd,
+    #[serde(rename = "US30_USD")]
+    Us30Usd,
+    #[serde(rename = "USB02Y_USD")]
+    Usb02YUsd,
+    #[serde(rename = "USB05Y_USD")]
+    Usb05YUsd,
+    #[serde(rename = "USB10Y_USD")]
+    Usb10YUsd,
+    #[serde(rename = "USB30Y_USD")]
+    Usb30YUsd,
     #[serde(rename = "USD_CAD")]
     UsdCad,
     #[serde(rename = "USD_CHF")]
@@ -141,8 +197,6 @@ pub enum InstrumentName {
     UsdNok,
     #[serde(rename = "USD_PLN")]
     UsdPln,
-    #[serde(rename = "USD_SAR")]
-    UsdSar,
     #[serde(rename = "USD_SEK")]
     UsdSek,
     #[serde(rename = "USD_SGD")]
@@ -153,30 +207,58 @@ pub enum InstrumentName {
     UsdTry,
     #[serde(rename = "USD_ZAR")]
     UsdZar,
+    #[serde(rename = "WHEAT_USD")]
+    WheatUsd,
+    #[serde(rename = "WTICO_USD")]
+    WticoUsd,
+    #[serde(rename = "XAG_AUD")]
+    XagAud,
+    #[serde(rename = "XAG_CAD")]
+    XagCad,
+    #[serde(rename = "XAG_CHF")]
+    XagChf,
+    #[serde(rename = "XAG_EUR")]
+    XagEur,
     #[serde(rename = "XAG_GBP")]
     XagGbp,
-    #[serde(rename = "XAU_USD")]
-    XauUsd,
-    #[serde(rename = "XAU_NZD")]
-    XauNzd,
-    #[serde(rename = "XAU_JPY")]
-    XauJpy,
-    #[serde(rename = "XAU_HKD")]
-    XauHkd,
-    #[serde(rename = "XAU_XAG")]
-    XauXag,
-    #[serde(rename = "XAU_SGD")]
-    XauSgd,
+    #[serde(rename = "XAG_HKD")]
+    XagHkd,
+    #[serde(rename = "XAG_JPY")]
+    XagJpy,
+    #[serde(rename = "XAG_NZD")]
+    XagNzd,
+    #[serde(rename = "XAG_SGD")]
+    XagSgd,
+    #[serde(rename = "XAG_USD")]
+    XagUsd,
     #[serde(rename = "XAU_AUD")]
     XauAud,
-    #[serde(rename = "XAU_EUR")]
-    XauEur,
     #[serde(rename = "XAU_CAD")]
     XauCad,
     #[serde(rename = "XAU_CHF")]
     XauChf,
+    #[serde(rename = "XAU_EUR")]
+    XauEur,
     #[serde(rename = "XAU_GBP")]
     XauGbp,
+    #[serde(rename = "XAU_HKD")]
+    XauHkd,
+    #[serde(rename = "XAU_JPY")]
+    XauJpy,
+    #[serde(rename = "XAU_NZD")]
+    XauNzd,
+    #[serde(rename = "XAU_SGD")]
+    XauSgd,
+    #[serde(rename = "XAU_USD")]
+    XauUsd,
+    #[serde(rename = "XAU_XAG")]
+    XauXag,
+    #[serde(rename = "XCU_USD")]
+    XcuUsd,
+    #[serde(rename = "XPD_USD")]
+    XpdUsd,
+    #[serde(rename = "XPT_USD")]
+    XptUsd,
     #[serde(rename = "ZAR_JPY")]
     ZarJpy,
 
@@ -185,6 +267,7 @@ pub enum InstrumentName {
 impl std::fmt::Display for InstrumentName {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
+            Self::Au200Aud => write!(f, "AU200_AUD"),
             Self::AudCad => write!(f, "AUD_CAD"),
             Self::AudChf => write!(f, "AUD_CHF"),
             Self::AudHkd => write!(f, "AUD_HKD"),
@@ -192,13 +275,22 @@ impl std::fmt::Display for InstrumentName {
             Self::AudNzd => write!(f, "AUD_NZD"),
             Self::AudSgd => write!(f, "AUD_SGD"),
             Self::AudUsd => write!(f, "AUD_USD"),
+            Self::BcoUsd => write!(f, "BCO_USD"),
             Self::CadChf => write!(f, "CAD_CHF"),
             Self::CadHkd => write!(f, "CAD_HKD"),
             Self::CadJpy => write!(f, "CAD_JPY"),
             Self::CadSgd => write!(f, "CAD_SGD"),
+            Self::Ch20Chf => write!(f, "CH20_CHF"),
             Self::ChfHkd => write!(f, "CHF_HKD"),
             Self::ChfJpy => write!(f, "CHF_JPY"),
             Self::ChfZar => write!(f, "CHF_ZAR"),
+            Self::ChinahHkd => write!(f, "CHINAH_HKD"),
+            Self::Cn50Usd => write!(f, "CN50_USD"),
+            Self::CornUsd => write!(f, "CORN_USD"),
+            Self::De10YbEur => write!(f, "DE10YB_EUR"),
+            Self::De30Eur => write!(f, "DE30_EUR"),
+            Self::EspixEur => write!(f, "ESPIX_EUR"),
+            Self::Eu50Eur => write!(f, "EU50_EUR"),
             Self::EurAud => write!(f, "EUR_AUD"),
             Self::EurCad => write!(f, "EUR_CAD"),
             Self::EurChf => write!(f, "EUR_CHF"),
@@ -216,6 +308,7 @@ impl std::fmt::Display for InstrumentName {
             Self::EurTry => write!(f, "EUR_TRY"),
             Self::EurUsd => write!(f, "EUR_USD"),
             Self::EurZar => write!(f, "EUR_ZAR"),
+            Self::Fr40Eur => write!(f, "FR40_EUR"),
             Self::GbpAud => write!(f, "GBP_AUD"),
             Self::GbpCad => write!(f, "GBP_CAD"),
             Self::GbpChf => write!(f, "GBP_CHF"),
@@ -226,17 +319,34 @@ impl std::fmt::Display for InstrumentName {
             Self::GbpSgd => write!(f, "GBP_SGD"),
             Self::GbpUsd => write!(f, "GBP_USD"),
             Self::GbpZar => write!(f, "GBP_ZAR"),
+            Self::Hk33Hkd => write!(f, "HK33_HKD"),
             Self::HkdJpy => write!(f, "HKD_JPY"),
+            Self::Jp225Usd => write!(f, "JP225_USD"),
+            Self::Jp225YJpy => write!(f, "JP225Y_JPY"),
+            Self::Nas100Usd => write!(f, "NAS100_USD"),
+            Self::NatgasUsd => write!(f, "NATGAS_USD"),
+            Self::Nl25Eur => write!(f, "NL25_EUR"),
             Self::NzdCad => write!(f, "NZD_CAD"),
             Self::NzdChf => write!(f, "NZD_CHF"),
             Self::NzdHkd => write!(f, "NZD_HKD"),
             Self::NzdJpy => write!(f, "NZD_JPY"),
             Self::NzdSgd => write!(f, "NZD_SGD"),
             Self::NzdUsd => write!(f, "NZD_USD"),
+            Self::Sg30Sgd => write!(f, "SG30_SGD"),
             Self::SgdChf => write!(f, "SGD_CHF"),
-            Self::SgdHkd => write!(f, "SGD_HKD"),
             Self::SgdJpy => write!(f, "SGD_JPY"),
+            Self::SoybnUsd => write!(f, "SOYBN_USD"),
+            Self::Spx500Usd => write!(f, "SPX500_USD"),
+            Self::SugarUsd => write!(f, "SUGAR_USD"),
             Self::TryJpy => write!(f, "TRY_JPY"),
+            Self::Uk100Gbp => write!(f, "UK100_GBP"),
+            Self::Uk10YbGbp => write!(f, "UK10YB_GBP"),
+            Self::Us2000Usd => write!(f, "US2000_USD"),
+            Self::Us30Usd => write!(f, "US30_USD"),
+            Self::Usb02YUsd => write!(f, "USB02Y_USD"),
+            Self::Usb05YUsd => write!(f, "USB05Y_USD"),
+            Self::Usb10YUsd => write!(f, "USB10Y_USD"),
+            Self::Usb30YUsd => write!(f, "USB30Y_USD"),
             Self::UsdCad => write!(f, "USD_CAD"),
             Self::UsdChf => write!(f, "USD_CHF"),
             Self::UsdCnh => write!(f, "USD_CNH"),
@@ -248,24 +358,37 @@ impl std::fmt::Display for InstrumentName {
             Self::UsdMxn => write!(f, "USD_MXN"),
             Self::UsdNok => write!(f, "USD_NOK"),
             Self::UsdPln => write!(f, "USD_PLN"),
-            Self::UsdSar => write!(f, "USD_SAR"),
             Self::UsdSek => write!(f, "USD_SEK"),
             Self::UsdSgd => write!(f, "USD_SGD"),
             Self::UsdThb => write!(f, "USD_THB"),
             Self::UsdTry => write!(f, "USD_TRY"),
             Self::UsdZar => write!(f, "USD_ZAR"),
+            Self::WheatUsd => write!(f, "WHEAT_USD"),
+            Self::WticoUsd => write!(f, "WTICO_USD"),
+            Self::XagAud => write!(f, "XAG_AUD"),
+            Self::XagCad => write!(f, "XAG_CAD"),
+            Self::XagChf => write!(f, "XAG_CHF"),
+            Self::XagEur => write!(f, "XAG_EUR"),
             Self::XagGbp => write!(f, "XAG_GBP"),
-            Self::XauUsd => write!(f, "XAU_USD"),
-            Self::XauNzd => write!(f, "XAU_NZD"),
-            Self::XauJpy => write!(f, "XAU_JPY"),
-            Self::XauHkd => write!(f, "XAU_HKD"),
-            Self::XauXag => write!(f, "XAU_XAG"),
-            Self::XauSgd => write!(f, "XAU_SGD"),
+            Self::XagHkd => write!(f, "XAG_HKD"),
+            Self::XagJpy => write!(f, "XAG_JPY"),
+            Self::XagNzd => write!(f, "XAG_NZD"),
+            Self::XagSgd => write!(f, "XAG_SGD"),
+            Self::XagUsd => write!(f, "XAG_USD"),
             Self::XauAud => write!(f, "XAU_AUD"),
-            Self::XauEur => write!(f, "XAU_EUR"),
             Self::XauCad => write!(f, "XAU_CAD"),
             Self::XauChf => write!(f, "XAU_CHF"),
+            Self::XauEur => write!(f, "XAU_EUR"),
             Self::XauGbp => write!(f, "XAU_GBP"),
+            Self::XauHkd => write!(f, "XAU_HKD"),
+            Self::XauJpy => write!(f, "XAU_JPY"),
+            Self::XauNzd => write!(f, "XAU_NZD"),
+            Self::XauSgd => write!(f, "XAU_SGD"),
+            Self::XauUsd => write!(f, "XAU_USD"),
+            Self::XauXag => write!(f, "XAU_XAG"),
+            Self::XcuUsd => write!(f, "XCU_USD"),
+            Self::XpdUsd => write!(f, "XPD_USD"),
+            Self::XptUsd => write!(f, "XPT_USD"),
             Self::ZarJpy => write!(f, "ZAR_JPY"),
         }
     }
@@ -273,7 +396,7 @@ impl std::fmt::Display for InstrumentName {
 
 impl Default for InstrumentName {
     fn default() -> InstrumentName {
-        Self::AudCad
+        Self::Au200Aud
     }
 }
 
