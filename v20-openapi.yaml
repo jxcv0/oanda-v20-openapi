@@ -11,7 +11,7 @@ info:
   license:
     name: MIT
     url: https://github.com/jxcv0/oanda-v20-openapi/blob/main/LICENSE
-  version: 0.1.0
+  version: 0.2.1
 servers:
   - url: https://api-{environment}.oanda.com/v3
     description: Oanda REST-V20 API
