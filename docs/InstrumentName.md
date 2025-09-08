@@ -74,6 +74,17 @@
 | UsdTry | USD_TRY |
 | UsdZar | USD_ZAR |
 | XagGbp | XAG_GBP |
+| XauUsd | XAU_USD |
+| XauNzd | XAU_NZD |
+| XauJpy | XAU_JPY |
+| XauHkd | XAU_HKD |
+| XauXag | XAU_XAG |
+| XauSgd | XAU_SGD |
+| XauAud | XAU_AUD |
+| XauEur | XAU_EUR |
+| XauCad | XAU_CAD |
+| XauChf | XAU_CHF |
+| XauGbp | XAU_GBP |
 | ZarJpy | ZAR_JPY |
 
 
