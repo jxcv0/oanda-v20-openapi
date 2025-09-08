@@ -2073,6 +2073,17 @@ components:
         - USD_TRY
         - USD_ZAR
         - XAG_GBP
+        - XAU_USD
+        - XAU_NZD
+        - XAU_JPY
+        - XAU_HKD
+        - XAU_XAG
+        - XAU_SGD
+        - XAU_AUD
+        - XAU_EUR
+        - XAU_CAD
+        - XAU_CHF
+        - XAU_GBP
         - ZAR_JPY
       x-enum-varnames:
         - AudCad
@@ -2145,6 +2156,17 @@ components:
         - UsdTry
         - UsdZar
         - XagGbp
+        - XauUsd
+        - XauNzd
+        - XauJpy
+        - XauHkd
+        - XauXag
+        - XauSgd
+        - XauAud
+        - XauEur
+        - XauCad
+        - XauChf
+        - XauGbp
         - ZarJpy
     InstrumentType:
       description: The type of the Instrument
