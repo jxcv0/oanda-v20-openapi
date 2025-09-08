@@ -73,6 +73,7 @@
 | UsdThb | USD_THB |
 | UsdTry | USD_TRY |
 | UsdZar | USD_ZAR |
+| XagGbp | XAG_GBP |
 | ZarJpy | ZAR_JPY |
 
 

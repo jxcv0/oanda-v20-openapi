@@ -16,13 +16,13 @@ use serde::{Deserialize, Serialize};
 pub struct InstrumentComission {
     /// The commission amount (in the Account's home currency) charged per unitsTraded of the instrument
     #[serde(rename = "commission", skip_serializing_if = "Option::is_none")]
-    pub commission: Option<f64>,
+    pub commission: Option<String>,
     /// The number of units traded that the commission amount is based on.
     #[serde(rename = "unitsTraded", skip_serializing_if = "Option::is_none")]
-    pub units_traded: Option<f64>,
+    pub units_traded: Option<String>,
     /// The minimum commission amount (in the Account's home currency) that is charged when an Order is filled for this instrument.
     #[serde(rename = "minimumCommission", skip_serializing_if = "Option::is_none")]
-    pub minimum_commission: Option<f64>,
+    pub minimum_commission: Option<String>,
 }
 
 impl InstrumentComission {

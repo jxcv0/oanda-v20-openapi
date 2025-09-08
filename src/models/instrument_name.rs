@@ -153,6 +153,8 @@ pub enum InstrumentName {
     UsdTry,
     #[serde(rename = "USD_ZAR")]
     UsdZar,
+    #[serde(rename = "XAG_GBP")]
+    XagGbp,
     #[serde(rename = "ZAR_JPY")]
     ZarJpy,
 
@@ -230,6 +232,7 @@ impl std::fmt::Display for InstrumentName {
             Self::UsdThb => write!(f, "USD_THB"),
             Self::UsdTry => write!(f, "USD_TRY"),
             Self::UsdZar => write!(f, "USD_ZAR"),
+            Self::XagGbp => write!(f, "XAG_GBP"),
             Self::ZarJpy => write!(f, "ZAR_JPY"),
         }
     }

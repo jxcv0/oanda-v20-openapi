@@ -16,43 +16,43 @@ use serde::{Deserialize, Serialize};
 pub struct AccountSummary {
     /// The total unrealized profit/loss for all Trades currently open in the Account.
     #[serde(rename = "unrealizedPL", skip_serializing_if = "Option::is_none")]
-    pub unrealized_pl: Option<f64>,
+    pub unrealized_pl: Option<String>,
     /// The net asset value of the Account. Equal to Account balance unrealizedPL.
     #[serde(rename = "NAV", skip_serializing_if = "Option::is_none")]
-    pub nav: Option<f64>,
+    pub nav: Option<String>,
     /// Margin currently used for the Account.
     #[serde(rename = "marginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_used: Option<f64>,
+    pub margin_used: Option<String>,
     /// Margin available for Account currency.
     #[serde(rename = "marginAvailable", skip_serializing_if = "Option::is_none")]
-    pub margin_available: Option<f64>,
+    pub margin_available: Option<String>,
     /// The value of the Account's open positions represented in the Account's home currency.
     #[serde(rename = "positionValue", skip_serializing_if = "Option::is_none")]
-    pub position_value: Option<f64>,
+    pub position_value: Option<String>,
     /// The Account's margin closeout unrealized PL.
     #[serde(rename = "marginCloseoutUnrealizedPL", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_unrealized_pl: Option<f64>,
+    pub margin_closeout_unrealized_pl: Option<String>,
     /// The Account's margin closeout NAV.
     #[serde(rename = "marginCloseoutNAV", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_nav: Option<f64>,
+    pub margin_closeout_nav: Option<String>,
     /// The Account's margin closeout margin used.
     #[serde(rename = "marginCloseoutMarginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_margin_used: Option<f64>,
+    pub margin_closeout_margin_used: Option<String>,
     /// The Account's margin closeout percentage. When this value is 1.0 or above the Account is in a margin closeout situation.
     #[serde(rename = "marginCloseoutPercent", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_percent: Option<f64>,
+    pub margin_closeout_percent: Option<String>,
     /// The value of the Account's open positions as used for margin closeout calculations represented in the Account's home currency.
     #[serde(rename = "marginCloseoutPositionValue", skip_serializing_if = "Option::is_none")]
-    pub margin_closeout_position_value: Option<f64>,
+    pub margin_closeout_position_value: Option<String>,
     /// The current WithdrawalLimit for the account which will be zero or a positive value indicating how much can be withdrawn from the account.
     #[serde(rename = "withdrawalLimit", skip_serializing_if = "Option::is_none")]
-    pub withdrawal_limit: Option<f64>,
+    pub withdrawal_limit: Option<String>,
     /// The Account's margin call margin used.
     #[serde(rename = "marginCallMarginUsed", skip_serializing_if = "Option::is_none")]
-    pub margin_call_margin_used: Option<f64>,
+    pub margin_call_margin_used: Option<String>,
     /// The Account's margin call percentage. When this value is 1.0 or above the Account is in a margin call situation.
     #[serde(rename = "marginCallPercent", skip_serializing_if = "Option::is_none")]
-    pub margin_call_percent: Option<f64>,
+    pub margin_call_percent: Option<String>,
     /// The Account's identifier
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -63,7 +63,7 @@ pub struct AccountSummary {
     pub currency: Option<models::AccountCurrency>,
     /// The current balance of the Account.
     #[serde(rename = "balance", skip_serializing_if = "Option::is_none")]
-    pub balance: Option<f64>,
+    pub balance: Option<String>,
     /// ID of the user that created the Account.
     #[serde(rename = "createdByUserID", skip_serializing_if = "Option::is_none")]
     pub created_by_user_id: Option<i32>,
@@ -74,25 +74,25 @@ pub struct AccountSummary {
     pub guaranteed_stop_loss_order_mode: Option<models::AccountGuaranteedStopLossOrderMode>,
     /// The total profit/loss realized over the lifetime of the Account.
     #[serde(rename = "pl", skip_serializing_if = "Option::is_none")]
-    pub pl: Option<f64>,
+    pub pl: Option<String>,
     /// The total realized profit/loss for the Account since it was last reset by the client.
     #[serde(rename = "resettablePL", skip_serializing_if = "Option::is_none")]
-    pub resettable_pl: Option<f64>,
+    pub resettable_pl: Option<String>,
     /// A date and time value using either RFC3339 or UNIX time representation. The RFC 3339 representation is a string conforming to https://tools.ietf.org/rfc/rfc3339.txt. The Unix representation is a string representing the number of seconds since the Unix Epoch (January 1st, 1970 at UTC). The value is a fractional number, where the fractional part represents a fraction of a second (up to nine decimal places).
     #[serde(rename = "resettablePLTime", skip_serializing_if = "Option::is_none")]
     pub resettable_pl_time: Option<String>,
     /// The total amount of financing paid/collected over the lifetime of the Account.
     #[serde(rename = "financing", skip_serializing_if = "Option::is_none")]
-    pub financing: Option<f64>,
+    pub financing: Option<String>,
     /// The total amount of commission paid over the lifetime of the Account.
     #[serde(rename = "commission", skip_serializing_if = "Option::is_none")]
-    pub commission: Option<f64>,
+    pub commission: Option<String>,
     /// The total amount of fees charged over the lifetime of the Account for the execution of guaranteed Stop Loss Orders.
     #[serde(rename = "guaranteedExecutionFees", skip_serializing_if = "Option::is_none")]
-    pub guaranteed_execution_fees: Option<f64>,
+    pub guaranteed_execution_fees: Option<String>,
     /// Client-provided margin rate override for the Account. The effective margin rate of the Account is the lesser of this value and the OANDA margin rate for the Account's division. This value is only provided if a margin rate override exists for the Account.
     #[serde(rename = "marginRate", skip_serializing_if = "Option::is_none")]
-    pub margin_rate: Option<f64>,
+    pub margin_rate: Option<String>,
     /// A date and time value using either RFC3339 or UNIX time representation. The RFC 3339 representation is a string conforming to https://tools.ietf.org/rfc/rfc3339.txt. The Unix representation is a string representing the number of seconds since the Unix Epoch (January 1st, 1970 at UTC). The value is a fractional number, where the fractional part represents a fraction of a second (up to nine decimal places).
     #[serde(rename = "marginCallEnterTime", skip_serializing_if = "Option::is_none")]
     pub margin_call_enter_time: Option<String>,
@@ -119,7 +119,7 @@ pub struct AccountSummary {
     pub last_order_fill_timestamp: Option<String>,
     /// The ID of the last Transaction created for the Account.
     #[serde(rename = "lastTransactionId", skip_serializing_if = "Option::is_none")]
-    pub last_transaction_id: Option<i32>,
+    pub last_transaction_id: Option<String>,
 }
 
 impl AccountSummary {

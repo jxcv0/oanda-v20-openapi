@@ -19,7 +19,7 @@ pub struct TransactionHeartbeat {
     pub r#type: Option<Type>,
     /// The ID of the most recent Transaction created for the Account
     #[serde(rename = "lastTransactionID", skip_serializing_if = "Option::is_none")]
-    pub last_transaction_id: Option<i32>,
+    pub last_transaction_id: Option<String>,
     /// A date and time value using either RFC3339 or UNIX time representation. The RFC 3339 representation is a string conforming to https://tools.ietf.org/rfc/rfc3339.txt. The Unix representation is a string representing the number of seconds since the Unix Epoch (January 1st, 1970 at UTC). The value is a fractional number, where the fractional part represents a fraction of a second (up to nine decimal places).
     #[serde(rename = "time", skip_serializing_if = "Option::is_none")]
     pub time: Option<String>,
