@@ -1,6 +1,6 @@
 [package]
 name = "oanda-v20-openapi"
-version = "0.1.0"
+version = "0.2.1"
 authors = ["jmicoud02@gmail.com"]
 description = "The full OANDA v20 API Specification. This specification defines how to interact with v20 Accounts, Trades, Orders, Pricing and more."
 license = "MIT"
